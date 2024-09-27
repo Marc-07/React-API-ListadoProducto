@@ -9,12 +9,28 @@ html {
 }
 
 body{
-    
+
     background-color: #F0F4F8;
     color: #000;
     font-size: 2rem;
     font-family: "Poppins";
     line-height: 1;
+}
+
+h1, h2, h3{
+    font-family: "Poppins", serif;
+}
+
+h1{
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3{
+    font-size: 1rem;
 }
 
 /* Estilos nav - button*/
