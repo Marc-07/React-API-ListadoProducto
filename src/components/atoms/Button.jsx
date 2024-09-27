@@ -1,4 +1,4 @@
-const Boton = ({ onClick, label, className = "", disabled = false}) => {
+const Button = ({ onClick, label, className = "", disabled = false}) => {
   
     <button onClick= {onClick} className= {`btn ${className}`} disabled= {disabled}>
         {label}
@@ -6,4 +6,4 @@ const Boton = ({ onClick, label, className = "", disabled = false}) => {
   
 }
 
-export default Boton
+export default Button
