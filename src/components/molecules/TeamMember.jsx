@@ -1,4 +1,4 @@
-const TeamMember = () => {
+const TeamMember = ({member}) => {
   return (
     <div>
         <img src={member.photo} alt={member.name} />
