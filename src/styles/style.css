@@ -9,9 +9,38 @@ html {
 }
 
 body{
-    background-color: #2E2E2E;
-    color: #fff;
+    
+    background-color: #F0F4F8;
+    color: #000;
     font-size: 2rem;
     font-family: "Poppins";
+    line-height: 1;
+}
+
+/* Estilos nav - button*/
+nav {
+
+    display: flex;
+    justify-content: center;
+    background-color: #2C3E50; 
+    padding: 1.5rem;
+    border-radius: 3px;
+}
+
+nav button {
+
+    margin: 0 10px;
+    background-color: #ce1905; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: "Poppins";
+}
+
+nav button:hover {
+    background-color: #b11301; /* Un poco más oscuro al pasar el ratón */
 }
 
