@@ -1,10 +1,38 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Home from "./pages/Home";
 import "./styles/style.css"
 
 function App() {
 
   const [currenPage, setCurrentPage] = useState ("home");
+  const [products, setProducts] = useState([]);
+
+ //Llamado de la API POKE 
+  useEffect(() => {
+    const initialProducts = async () => {
+        try {
+            const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=3");
+            console.log(response)
+            const data = await response.json();
+            console.log(data)
+            const upProducts = await Promise.all(data.results.map(async (item) => {
+                const pokemonResponse = await fetch(item.url);
+                const pokemonData = await pokemonResponse.json();
+
+                return {
+                    name: pokemonData.name,
+                    image: pokemonData.sprites.other.dream_world.front_default,
+                    abilities: pokemonData.abilities.map(ability => ability.ability.name).join(', '),
+                };
+            }));
+            setProducts(upProducts);
+        } catch (error) {
+            console.error("Error al obtener los datos", error);
+        }
+    };
+
+    initialProducts();
+  }, []); 
 
   const renderPage = () =>{
     switch (currenPage) {
