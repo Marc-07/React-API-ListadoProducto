@@ -3,7 +3,7 @@ import Card from "../components/molecules/Card";
 const ProductList = ({ products }) => {
     return (
         <>
-            <h2>Lista de Pokémon</h2>
+            <h1>Lista de Pokémon</h1>
             {products.length === 0 ? (
                 <p>Cargando Pokémon...</p>
             ) : (

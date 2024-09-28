@@ -1,13 +1,13 @@
 const Card = ({name, image, abilities}) => {
   return (
-    <div>
+    <div className="pokemon-card">
         <figure>
-            <img src={image} alt={name} />
+            <img className="pokemon-image" src={image} alt={name} />
         </figure>
         <h3>{name}</h3>
         <aside>
-            <p>Stack</p>
-            <p>{abilities}</p>
+            <p className="parrafo">Stack</p>
+            <p className="abilities">{abilities}</p>
         </aside>
     </div>
   )
