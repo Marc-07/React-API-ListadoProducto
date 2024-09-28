@@ -2,12 +2,20 @@ import { useState } from "react"
 import Input from "../components/atoms/input"
 import Button from "../components/atoms/Button"
 
-const AddProduct = ({onAddProduct}) => {
+const AddProduct = ({onAddProduct, existingProducts}) => {
 
     const [pokemonName, setPokemonName] = useState ("");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        //Verifica si el pokemon ya existe en la lista
+        const pokemonExists = existingProducts.some(product => product.name.toLowerCase() === pokemonName.toLowerCase());
+
+        if (pokemonExists) {
+            alert(`El Pokémon ${pokemonName} ya existe. 😅`);
+            return;
+        }
 
         try {
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}`);
@@ -24,7 +32,7 @@ const AddProduct = ({onAddProduct}) => {
             onAddProduct (newProduct);
             setPokemonName("");
         } catch (error){
-            alert ("Pokemon no encontrado, intenta de nuevo.");
+            alert ("Pokemon no encontrado 😣, intenta de nuevo.");
         }
     }
 
