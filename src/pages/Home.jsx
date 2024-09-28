@@ -12,12 +12,6 @@ const Home = () => {
       linkedin: "https://www.linkedin.com/in/maria-ramos-57b95b258/"
     },
 
-    {
-      name: "María A. Ramos",
-      photo: fotoMaria,
-      github: "https://github.com/Marc-07",
-      linkedin: "https://www.linkedin.com/in/maria-ramos-57b95b258/"
-    },
   ]
 
   return (
