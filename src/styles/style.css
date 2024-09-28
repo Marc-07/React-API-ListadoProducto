@@ -199,3 +199,10 @@ nav button:hover {
 .btn:hover {
     background-color: #af0404; 
 }
+
+/* Ajustes generales para pantallas pequeñas */
+@media (max-width: 480px) {
+    h1, h2, h3{
+        font-size: 2rem;
+    }
+}
