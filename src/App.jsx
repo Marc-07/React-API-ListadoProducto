@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import Home from "./pages/Home";
+import AddProduct from "./pages/AddProduct";
 import ProductList from "./pages/ProductList";
 import "./styles/style.css"
 
@@ -8,14 +9,17 @@ function App() {
   const [currenPage, setCurrentPage] = useState ("home");
   const [products, setProducts] = useState([]);
 
+  const addProduct = (newProduct) => {
+    setProducts((prevProducts) => [newProduct, ...prevProducts]); 
+  };
+
  //Llamado de la API POKE 
   useEffect(() => {
     const initialProducts = async () => {
         try {
             const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=3");
-            console.log(response)
             const data = await response.json();
-            console.log(data)
+
             const upProducts = await Promise.all(data.results.map(async (item) => {
                 const pokemonResponse = await fetch(item.url);
                 const pokemonData = await pokemonResponse.json();
@@ -40,7 +44,7 @@ function App() {
       case "home":
         return <Home />
       case "addProduct":
-        return <AddProduct />
+        return <AddProduct onAddProduct={addProduct} existingProducts={products}/>
       case "productList":
         return <ProductList products={products}  /> //Se pasan los productos 
       default:
