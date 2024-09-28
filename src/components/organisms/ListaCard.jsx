@@ -1,16 +1,14 @@
 import Card from "../molecules/Card"
 
-const ListaCard = ({pokemons}) => {
+const ListaCard = ({pokemon}) => {
   return (
     <div>
-        {pokemons.map((pokemon, index) => (
-            <Card 
-                key={index}
-                name={pokemon.name}
-                image={pokemon.image}
-                abilities={pokemon.abilities}
-            />
-        ))}
+        <Card 
+            key={index}
+            name={pokemon.name}
+            image={pokemon.image}
+            abilities={pokemon.abilities}
+        />  
     </div>
   )
 }
