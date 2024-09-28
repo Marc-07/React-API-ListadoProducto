@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import Home from "./pages/Home";
+import ProductList from "./pages/ProductList";
 import "./styles/style.css"
 
 function App() {
@@ -41,7 +42,7 @@ function App() {
       case "addProduct":
         return <AddProduct />
       case "productList":
-        return <ProductList />
+        return <ProductList products={products}  /> //Se pasan los productos 
       default:
         return <Home />
     }
