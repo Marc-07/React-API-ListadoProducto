@@ -40,7 +40,7 @@ const AddProduct = ({onAddProduct, existingProducts}) => {
     return (
         
         <form className="pokemon-form" onSubmit={handleSubmit}>
-            <h2>Agrega un Pokemon 😼</h2>
+            <h2>Agrega un Pokémon 😼</h2>
             <Input 
                 value={pokemonName}
                 onChange={(e) => setPokemonName (e.target.value) }
