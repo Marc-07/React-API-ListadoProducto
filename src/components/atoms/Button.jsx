@@ -1,8 +1,12 @@
 const Button = ({ onClick, label, className = "", disabled = false}) => {
   
-    <button onClick= {onClick} className= {`btn ${className}`} disabled= {disabled}>
+    return (
+
+        <button onClick= {onClick} className= {`btn ${className}`} disabled= {disabled}>
         {label}
-    </button>
+        </button>
+    )
+    
   
 }
 
